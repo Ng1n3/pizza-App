@@ -50,8 +50,8 @@ function App() {
   return (
     <div>
       <h1>Hello React!</h1>
-      <Header /> 
-      <Menu /> 
+      <Header />
+      <Menu />
       <Footer />
     </div>
   );
@@ -62,16 +62,25 @@ function Header() {
 }
 
 function Menu() {
-  return <div>
-    <h2>Our Menu</h2>
-    <Pizza/> 
-    <Pizza/> 
-    <Pizza/> 
-  </div>
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
 }
 
 function Footer() {
   // return React.createElement('footer', null, "we're currently open!")
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour
+
+  // if (hour >= openHour && hour <= closeHour) alert("we're Open!");
+  // else alert("Sorry we're closed");
   return (
     <footer>{new Date().toLocaleTimeString()}. We're currently open</footer>
   );
