@@ -76,11 +76,18 @@ function Menu() {
       <h2>Our Menu</h2>
 
       {numPizzas > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza pizzaObject={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        // react fragment
+        <> 
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObject={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p> We're still working on our menu. Please come back later</p>
       )}
@@ -122,11 +129,12 @@ function Footer() {
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
 
-  function Order({closeHour, openHour}) {
+  function Order({ closeHour, openHour }) {
     return (
       <div className="order">
         <p>
-          We're open from {openHour}:00 am to {closeHour}:00 pm. Come visit us or order onine.
+          We're open from {openHour}:00 am to {closeHour}:00 pm. Come visit us
+          or order onine.
         </p>
         <button className="btn">Order</button>
       </div>
